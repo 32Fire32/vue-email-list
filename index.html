@@ -19,13 +19,14 @@
     <div id="app" class="container">
         <div class="all" @click="clear"><i class="fa-solid fa-xmark"></i>Cancella tutto</div>
         <div class="email_list">
-            <ul>
-                <li v-if="emails.length > 0"v-for="(email, index) in emails">
+            <ul v-if="emails.length === 10">         
+                <li  v-for="(email, index) in emails" >
                     <span>{{emails[index]}}</span>
                     <span @click="del(index)"><i class="fa-solid fa-trash"></i></span>
                 </li>
-                <span v-else>Non ci sono e-mail inserite</span>
             </ul>
+            <span v-else>Non ci sono e-mail inserite</span>
+
         </div>
     </div>
     <!-- javascript -->
